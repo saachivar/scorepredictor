@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import LinearRegression
-from sklearn.model_selection import mean_absolute_error
-from sklearn.model_selection import mean_squared_error
-from sklearn.model_selection import r2_score
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
 
 
 # Change pandas display settings to show all columns
