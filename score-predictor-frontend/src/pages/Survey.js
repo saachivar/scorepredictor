@@ -1,10 +1,7 @@
+import React from 'react';
 
-function Survey() {
-  return (
-    <div className="Survey">
-      <h1>The Survey!</h1>
-    </div>
-  );
-}
+const Survey = () => {
+  return <h1>About Page</h1>;
+};
 
 export default Survey;
