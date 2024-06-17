@@ -1,15 +1,17 @@
 import "./images/arrow.png"
+import { Link } from 'react-router-dom';
 export default function Home() {
+  
 
   return (
       <div className='Home'>
         <div className='Intro'>
           <h1>Welcome to the SAT score predictor*. </h1>
-          <a className='h2' href={`/Survey`}> Begin the survey
+          <Link className='h2 nav-link' to="/Survey">Begin the survey
             <div id='home-arrow'>
               <img src={ require ("./images/arrow.png") } alt="Description of Image" class="styled-image"/>
             </div>
-          </a>
+          </Link>
         </div>
         <div className='Disclaimer'>
           <p>
