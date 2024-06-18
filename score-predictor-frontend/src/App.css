@@ -4,14 +4,14 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 85px;
+  font-size: 75px;
 }
 h2, .h2 {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto; 
   font-weight: 400;
   font-style: normal;
-  font-size: 60px;
+  font-size: 55px;
   text-decoration: none; 
   color: white; 
 }
@@ -29,7 +29,7 @@ p {
 .Intro {
   margin-left: 150px;
   margin-top: 100px;
-  margin-bottom: 160px;
+  margin-bottom: 190px;
   width: 900px;
 }
 
@@ -41,8 +41,8 @@ p {
 }
 
 #home-arrow {
-  margin-left: 500px;
-  margin-top: -70px;
+  margin-left: 480px;
+  margin-top: -60px;
 }
 
 .styled-image {
@@ -55,7 +55,7 @@ p {
     transform: translateX(0); /* Start at original position */
   }
   50% {
-    transform: translateX(100px); /* Move 100px to the right */
+    transform: translateX(60px); /* Move 100px to the right */
   }
   100% {
       transform: translateX(0px); /* Move 100px to the right */
@@ -65,16 +65,55 @@ p {
   color: white;
 }
 .question {
-  margin-left: 150px;
-  margin-top: 100px;
+  margin-left: 100px;
+  margin-top: 80px;
 }
 
 .Results {
   color: white;
 }
 
-
 .nav-link:hover {
   color: rgb(214, 226, 228);
+}
+
+/* For forward transitions */
+.swipe-right-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.swipe-right-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.swipe-right-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.swipe-right-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* For backward transitions */
+.swipe-left-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.swipe-left-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.swipe-left-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.swipe-left-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms, transform 300ms;
 }
 
