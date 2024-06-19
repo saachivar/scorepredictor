@@ -11,8 +11,17 @@ export default function Survey () {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const questions = [
-    <Question question={"What is your gender?"} answers={["male", "female"]}/>,
-    <Question question={"How much education did your parents get?"} answers={["high school", "college", "big boy phd"]}/>,
+    <Question question={"What is your gender?"} answers={["male", "female"]} />,
+  <Question question={"What is your parents' education level?"} answers={["bachelor's degree", "some college", "master's degree", "associate's degree", "high school"]} />,
+  <Question question={"What is your lunch type?"} answers={["free/reduced", "standard"]} />,
+  <Question question={"Have you completed any test prep?"} answers={["yes", "no"]} />,
+  <Question question={"What is your parent's marital status?"} answers={["married", "divorced", "widowed"]} />,
+  <Question question={"Do you practice a sport?"} answers={["regularly", "sometimes", "never"]} />,
+  <Question question={"Are you a first child?"} answers={["yes", "no"]} />,
+  <Question question={"How many siblings do you have?"} answers={["0", "1", "2", "3+"]} />,
+  <Question question={"How do you get to school?"} answers={["school bus", "privately"]} />,
+  <Question question={"How many hours a week do you study?"} answers={["< 5", "5 - 10", "> 10"]} />,
+
   ]
 
   const nextQuestion = () => {
