@@ -116,4 +116,39 @@ p {
   transform: translateX(100%);
   transition: opacity 300ms, transform 300ms;
 }
+.survey-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  position: relative;
+}
 
+.question-container {
+  width: 100%;
+  padding: 20px; /* Add padding to prevent text from touching the edges */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px; /* Add padding for spacing */
+  position: absolute;
+  bottom: 20px; /* Position the buttons at the bottom */
+}
+
+.survey-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.survey-left {
+  left: 20px;
+}
+
+.survey-right {
+  right: 20px;
+}

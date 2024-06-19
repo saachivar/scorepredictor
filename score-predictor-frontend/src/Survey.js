@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import "./images/right-arrow.png";
 import "./images/left-arrow.png";
+
+
 export default function Survey () {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -28,19 +30,18 @@ export default function Survey () {
   };
 
   return (
-    <div>
-      {questions[currentQuestion]}
-      <div>
-        <button onClick={previousQuestion} >
-          <img src={ require ("./images/left-arrow.png") }  alt="back" className="button-image" />
+    <div className="survey-container">
+      <div className="question-container">
+        {questions[currentQuestion]}
+      </div>
+      <div className="button-container">
+        <button onClick={previousQuestion} className="survey-arrow survey-left">
+          <img src={ require ("./images/left-arrow.png") } alt="back" />
         </button>
-        <button onClick={nextQuestion} disabled={currentQuestion === questions.length - 1}>
-          <img src={ require ("./images/right-arrow.png") }  alt="next" className="button-image" />
+        <button onClick={nextQuestion} className="survey-arrow survey-right" disabled={currentQuestion === questions.length - 1}>
+          <img src={ require ("./images/right-arrow.png") } alt="next" />
         </button>
       </div>
     </div>
   );
 };
-
-
-  

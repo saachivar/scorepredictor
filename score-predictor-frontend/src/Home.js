@@ -10,7 +10,7 @@ export default function Home() {
             <h1>Welcome to the SAT score predictor*. </h1>
             <Link className='h2 nav-link' to="/Survey">Begin the survey
               <div id='home-arrow' >
-                <img src={ require ("./images/right-arrow.png") } alt="Description of Image" class="styled-image"/> 
+                <img src={ require ("./images/right-arrow.png") } alt="Description of Image" className="styled-image"/> 
               </div>
             </Link>
           </div>
