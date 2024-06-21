@@ -5,8 +5,10 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 75px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-h2, .h2 {
+h2, .h2, ul {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto; 
   font-weight: 400;
@@ -14,6 +16,7 @@ h2, .h2 {
   font-size: 55px;
   text-decoration: none; 
   color: white; 
+  margin-top: 15px;
 }
 p {
   font-family: "Raleway", sans-serif;
@@ -21,6 +24,9 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 17px;
+}
+ul {
+  margin-top: 0px;
 }
 .Home {
   color: white;
@@ -66,7 +72,7 @@ p {
 }
 .question {
   margin-left: 100px;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .Results {
@@ -147,9 +153,56 @@ p {
 }
 
 .survey-left {
-  margin-left: 50px;
+  margin-left: 70px;
 }
 
 .survey-right {
-  margin-right: 50px;
+  margin-right: 70px;
+}
+.question h2 label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.question h2 input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.question h2 input[type="radio"] + span {
+  position: relative;
+  padding-left: 50px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.question h2 input[type="radio"] + span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px; /* Adjusted size */
+  height: 30px; /* Adjusted size */
+  border-radius: 50%;
+  border: 2px solid #4c61af8a; /* Border color */
+  background-color: #fff; /* Background color */
+}
+
+.question h2 input[type="radio"]:checked + span::before {
+  background-color: #5c72c36b; /* Custom color for checked state */
+  border: 2px solid #5c72c36b; /* Border color for checked state */
+}
+
+.question h2 input[type="radio"]:checked + span::after {
+  content: '';
+  position: absolute;
+  left: 10px; /* Adjusted for new size */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px; /* Adjusted size */
+  height: 15px; /* Adjusted size */
+  border-radius: 50%;
+  background-color: #fff; /* Inner circle color */
 }

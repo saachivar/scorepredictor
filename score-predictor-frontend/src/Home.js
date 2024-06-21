@@ -1,3 +1,4 @@
+import { px } from "framer-motion";
 import "./images/right-arrow.png"
 import { Link } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ export default function Home() {
   return (
         <div className='Home'>
           <div className='Intro'>
-            <h1>Welcome to the SAT score predictor*. </h1>
+            <h1 style={{marginBottom: '40px'}}>Welcome to the SAT score predictor*. </h1>
             <Link className='h2 nav-link' to="/Survey">Begin the survey
               <div id='home-arrow' >
                 <img src={ require ("./images/right-arrow.png") } alt="Description of Image" className="styled-image"/> 
