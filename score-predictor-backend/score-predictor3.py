@@ -51,7 +51,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model.fit(X_train, y_train)
 
 # Get feature importances from the random forest model
-regressor = model.named_steps['regressor']
+regressor = model.named_steps['regressor'] 
 feature_importances = regressor.feature_importances_
 
 # Get the feature names after preprocessing
