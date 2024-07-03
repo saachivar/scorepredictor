@@ -57,7 +57,7 @@ export default function Survey() {
         />
       </div>
       <div className="button-container">
-        <button onClick={previousQuestion} className="survey-arrow survey-left">
+        <button onClick={previousQuestion, () => onSwipe('backward')} className="survey-arrow survey-left">
           <img src={require("./images/left-arrow.png")} alt="back" />
         </button>
         <button onClick={nextQuestion} className="survey-arrow survey-right">
