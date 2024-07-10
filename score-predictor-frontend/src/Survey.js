@@ -4,8 +4,11 @@ import Question from "./components/Question";
 import "./images/right-arrow.png";
 import "./images/left-arrow.png";
 
+
 export default function Survey() {
+ 
   const navigate = useNavigate();
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
 
@@ -45,6 +48,9 @@ export default function Survey() {
     }
   };
 
+   // Calculate percentage width for top-line
+   const topLineWidth = ((currentQuestion + 1) / questions.length) * 100 + '%';
+
   return (
     <div className="survey-container">
       <div className="question-container">
@@ -56,10 +62,13 @@ export default function Survey() {
           onAnswerChange={handleAnswerChange}
         />
       </div>
-      <div className="button-container">
-        <button onClick={previousQuestion, () => onSwipe('backward')} className="survey-arrow survey-left">
+      <div className="button-container" >
+        <button onClick={previousQuestion} className="survey-arrow survey-left" >
           <img src={require("./images/left-arrow.png")} alt="back" />
         </button>
+        <div className="rounded-line">
+          <div className="top-line" style={{ width: topLineWidth }}></div>
+        </div>
         <button onClick={nextQuestion} className="survey-arrow survey-right">
           <img src={require("./images/right-arrow.png")} alt="next" />
         </button>

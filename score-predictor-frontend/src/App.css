@@ -88,7 +88,7 @@ ul {
   color: rgb(214, 226, 228);
 }
 
-/* For forward transitions */
+/* swipe-right-enter and swipe-right-enter-active represent the entering transition */
 .swipe-right-enter {
   opacity: 0;
   transform: translateX(100%);
@@ -98,6 +98,8 @@ ul {
   transform: translateX(0);
   transition: opacity 300ms, transform 300ms;
 }
+
+/* swipe-right-exit and swipe-right-exit-active represent the exiting transition */
 .swipe-right-exit {
   opacity: 1;
   transform: translateX(0);
@@ -108,25 +110,6 @@ ul {
   transition: opacity 300ms, transform 300ms;
 }
 
-/* For backward transitions */
-.swipe-left-enter {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-.swipe-left-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
-.swipe-left-exit {
-  opacity: 1;
-  transform: translateX(0);
-}
-.swipe-left-exit-active {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 300ms, transform 300ms;
-}
 .survey-container {
   display: flex;
   flex-direction: column;
@@ -147,7 +130,25 @@ ul {
   width: 100%;
   padding: 20px; /* Add padding for spacing */
   position: absolute;
-  bottom: 20px; /* Position the buttons at the bottom */
+  bottom: 50px; /* Position the buttons at the bottom */
+}
+
+.rounded-line {
+  width: 65%;      /* Adjust the width as needed */
+  height: 15px;     /* Adjust the height as needed */
+  background-color: white;  /* Adjust the color as needed */
+  border-radius: 15px;   /* Half of the height for fully rounded edges */
+  margin-top: 95px;
+  position: relative;
+}
+.top-line {
+  position: absolute;
+  border-radius: 15px;   /* Half of the height for fully rounded edges */
+  /* Style for the top line */
+  background-color: #2a3d838a; /* Change color for the top line */
+  width: 50%;      /* Adjust the width as needed */
+  height: 15px;   
+  transition: width 0.5s ease-in-out; 
 }
 
 .survey-arrow {
@@ -164,6 +165,8 @@ ul {
 .survey-right {
   margin-right: 70px;
 }
+
+
 .question h2 label {
   cursor: pointer;
   display: flex;
@@ -211,3 +214,4 @@ ul {
   border-radius: 50%;
   background-color: #fff; /* Inner circle color */
 }
+
