@@ -66,6 +66,32 @@ importance_df = pd.DataFrame({'Feature': all_columns, 'Importance': feature_impo
 # Sort the DataFrame by importance
 importance_df = importance_df.sort_values(by='Importance', ascending=False)
 
+# Assume you have a new test case
+new_test_case = {
+    'Gender': 'Female',
+    'NrSiblings': 1,
+    'WklyStudyHours': '5-10 hours',
+    'ParentEduc': "master's degree",
+    'LunchType': 'Reduced',
+    'TestPrep': 'Completed',
+    'ParentMaritalStatus': 'Married',
+    'PracticeSport': 'Yes',
+    'IsFirstChild': 'Yes',
+    'TransportMeans': 'Public'
+}
+
+# Convert the new test case to a DataFrame
+new_test_case_df = pd.DataFrame([new_test_case])
+
+# Use the trained model to predict the scores
+predicted_scores = model.predict(new_test_case_df)
+
+predicted_scores*=8
+
+# Display the predicted scores
+print(predicted_scores)
+
+
 # Plot feature importances
 plt.figure(figsize=(12, 8))
 plt.barh(importance_df['Feature'], importance_df['Importance'])
@@ -73,7 +99,8 @@ plt.xlabel('Importance')
 plt.ylabel('Feature')
 plt.title('Feature Importances')
 plt.gca().invert_yaxis()
-plt.show()
+
 
 # Display the sorted feature importances
 print(importance_df)
+

@@ -13,16 +13,16 @@ export default function Survey() {
   const [answers, setAnswers] = useState({});
 
   const questions = [
-    { question: "What is your gender?", answers: ["male", "female"], name: "gender" },
-    { question: "What is your parents' education level?", answers: ["bachelor's degree", "some college", "master's degree", "associate's degree", "high school"], name: "parentsEducation" },
-    { question: "What is your lunch type?", answers: ["free/reduced", "standard"], name: "lunchType" },
-    { question: "Have you completed any test prep?", answers: ["yes", "no"], name: "testPrep" },
-    { question: "What is your parent's marital status?", answers: ["married", "divorced", "widowed"], name: "maritalStatus" },
-    { question: "Do you practice a sport?", answers: ["regularly", "sometimes", "never"], name: "sportPractice" },
-    { question: "Are you a first child?", answers: ["yes", "no"], name: "firstChild" },
-    { question: "How many siblings do you have?", answers: ["0", "1", "2", "3+"], name: "siblings" },
-    { question: "How do you get to school?", answers: ["school bus", "privately"], name: "schoolTransport" },
-    { question: "How many hours a week do you study?", answers: ["< 5", "5 - 10", "> 10"], name: "studyHours" },
+    { question: "1. What is your gender?", answers: ["male", "female"], name: "gender" },
+    { question: "2. What is your parents' education level?", answers: ["bachelor's degree", "some college", "master's degree", "associate's degree", "high school"], name: "parentsEducation" },
+    { question: "3. What is your lunch type?", answers: ["free/reduced", "standard"], name: "lunchType" },
+    { question: "4. Have you completed any test prep?", answers: ["yes", "no"], name: "testPrep" },
+    { question: "5. What is your parent's marital status?", answers: ["married", "divorced", "widowed"], name: "maritalStatus" },
+    { question: "6. Do you practice a sport?", answers: ["regularly", "sometimes", "never"], name: "sportPractice" },
+    { question: "7. Are you a first child?", answers: ["yes", "no"], name: "firstChild" },
+    { question: "8. How many siblings do you have?", answers: ["0", "1", "2", "3+"], name: "siblings" },
+    { question: "9. How do you get to school?", answers: ["school bus", "privately"], name: "schoolTransport" },
+    { question: "10. How many hours a week do you study?", answers: ["< 5", "5 - 10", "> 10"], name: "studyHours" },
   ];
 
   const handleAnswerChange = (name, answer) => {
@@ -66,6 +66,7 @@ export default function Survey() {
         <button onClick={previousQuestion} className="survey-arrow survey-left" >
           <img src={require("./images/left-arrow.png")} alt="back" />
         </button>
+
         <div className="rounded-line">
           <div className="top-line" style={{ width: topLineWidth }}></div>
         </div>

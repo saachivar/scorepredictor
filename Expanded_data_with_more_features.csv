@@ -689,7 +689,7 @@
 723,male,group C,high school,standard,none,married,regularly,no,2,school_bus,5 - 10,51,48,43
 724,male,group B,some college,standard,none,divorced,sometimes,yes,4,school_bus,> 10,48,43,41
 725,male,group E,some college,standard,completed,married,never,yes,4,,< 5,76,71,67
-726,female,group E,,standard,completed,single,sometimes,yes,3,school_bus,> 10,66,76,78
+726,female,group E,x,standard,completed,single,sometimes,yes,3,school_bus,> 10,66,76,78
 727,male,group E,some high school,standard,completed,married,regularly,yes,0,school_bus,5 - 10,70,51,58
 728,female,group D,high school,free/reduced,none,single,sometimes,yes,1,private,< 5,70,90,82
 729,male,group C,some college,standard,none,single,regularly,no,3,private,< 5,52,38,37
