@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+from flask import Flask, request, jsonify
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
@@ -8,8 +10,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 
+app = Flask(__name__)
 # Load the dataset
 df = pd.read_csv('../Expanded_data_with_more_features.csv')
+
+# Load the model
+model = joblib.load('model.pkl')
 
 # Identify numeric and categorical columns
 numerical_cols = ['NrSiblings']
