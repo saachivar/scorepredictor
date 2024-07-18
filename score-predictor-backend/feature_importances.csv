@@ -1,0 +1,29 @@
+Feature,Importance
+NrSiblings,0.18089071535711587
+LunchType_free/reduced,0.06741978904442872
+LunchType_standard,0.06463875632116332
+Gender_male,0.04312387795247614
+ParentMaritalStatus_married,0.038766031747823476
+TransportMeans_private,0.03716108688747528
+TransportMeans_school_bus,0.03656541949808305
+ParentMaritalStatus_single,0.03615856561608576
+Gender_female,0.03583390895039424
+TestPrep_none,0.03539024398958631
+IsFirstChild_no,0.03394949127622947
+IsFirstChild_yes,0.03379609563765896
+ParentMaritalStatus_divorced,0.03332331463436332
+WklyStudyHours_5 - 10,0.03245190489119054
+PracticeSport_sometimes,0.03239283284719959
+PracticeSport_regularly,0.03140411420361391
+TestPrep_completed,0.03042804537042058
+WklyStudyHours_< 5,0.028837850852186753
+WklyStudyHours_> 10,0.028484470080880456
+ParentEduc_some high school,0.025102800291387648
+PracticeSport_never,0.02499807601711042
+ParentEduc_master's degree,0.017606087563887294
+ParentEduc_high school,0.016458417599796986
+ParentEduc_some college,0.01531747704213687
+ParentEduc_bachelor's degree,0.01465023554943551
+ParentEduc_associate's degree,0.014249444510041186
+ParentMaritalStatus_widowed,0.010584427057087311
+ParentEduc_x,1.651921074083471e-05

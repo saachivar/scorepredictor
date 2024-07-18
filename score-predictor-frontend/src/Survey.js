@@ -34,10 +34,9 @@ export default function Survey() {
 
   const nextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
-      alert("Test")
       setCurrentQuestion(currentQuestion + 1);
-    } else if (areAllQuestionsAnswered) {
-      navigate('/Results')
+    } else if (areAllQuestionsAnswered()) {
+      sendAnswersToBackend();
     } else {
       alert("Please answer all of the questions before submitting.")
     }
@@ -51,13 +50,35 @@ export default function Survey() {
     }
   };
 
+
   const areAllQuestionsAnswered = () => {
-    return questions.every(question => answers[question.name]);
+    return questions.every(question => answers[question.name] !== undefined && answers[question.name] !== '');
   };
 
-   // Calculate percentage width for top-line
-   const topLineWidth = ((currentQuestion + 1) / questions.length) * 100 + '%';
+  const sendAnswersToBackend = async () => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(answers),
+      });
+      const data = await response.json();
+      // Handle the response data as needed
+      console.log('Predicted Scores:', data.predicted_scores);
+      console.log('Feature Importances:', data.feature_importances);
+      navigate('/Results', { state: { scores: data.predicted_scores, importances: data.feature_importances } });
+    } catch (error) {
+      console.error('Error sending data to backend:', error);
+    }
+    navigate('/Results')
+  }
 
+  // Calculate percentage width for top-line
+  const topLineWidth = ((currentQuestion + 1) / questions.length) * 100 + '%';
+
+  
   return (
     <div className="survey-container">
       <div className="question-container">

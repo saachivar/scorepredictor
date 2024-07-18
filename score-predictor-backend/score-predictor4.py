@@ -77,6 +77,10 @@ importance_df.to_csv('feature_importances.csv', index=False)
 model = joblib.load('model.pkl')
 importance_df = pd.read_csv('feature_importances.csv')
 
+@app.route('/')
+def home():
+    return "Welcome to the Score Predictor API!"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
