@@ -1,21 +1,18 @@
 import pandas as pd
 import numpy as np
 from flask import Flask, request, jsonify
-import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
-import matplotlib.pyplot as plt
+import joblib
 
 app = Flask(__name__)
 
 # Load the dataset
 df = pd.read_csv('Expanded_data_with_more_features.csv')
-
-
 
 # Identify numeric and categorical columns
 numerical_cols = ['NrSiblings']
@@ -30,7 +27,7 @@ numeric_transformer = Pipeline(steps=[
 # Define preprocessing steps for categorical columns
 categorical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='most_frequent')),
-    ('onehot', OneHotEncoder(handle_unknown='ignore', dtype=float))
+    ('onehot', OneHotEncoder(handle_unknown='ignore'))
 ])
 
 # Bundle preprocessing steps using ColumnTransformer
@@ -56,14 +53,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Train the model on the training data
 model.fit(X_train, y_train)
 
-# Save the trained model
-joblib.dump(model, 'model.pkl')
-
-# Reload the trained model
-model = joblib.load('model.pkl')
-
 # Get feature importances from the random forest model
-regressor = model.named_steps['regressor'] 
+regressor = model.named_steps['regressor']
 feature_importances = regressor.feature_importances_
 
 # Get the feature names after preprocessing
@@ -78,41 +69,25 @@ importance_df = pd.DataFrame({'Feature': all_columns, 'Importance': feature_impo
 # Sort the DataFrame by importance
 importance_df = importance_df.sort_values(by='Importance', ascending=False)
 
-# Assume you have a new test case
-new_test_case = {
-    'Gender': 'Female',
-    'NrSiblings': 1,
-    'WklyStudyHours': '5-10 hours',
-    'ParentEduc': "master's degree",
-    'LunchType': 'Reduced',
-    'TestPrep': 'Completed',
-    'ParentMaritalStatus': 'Married',
-    'PracticeSport': 'Yes',
-    'IsFirstChild': 'Yes',
-    'TransportMeans': 'Public'
-}
+# Save the trained model and feature importances
+joblib.dump(model, 'model.pkl')
+importance_df.to_csv('feature_importances.csv', index=False)
 
-# Convert the new test case to a DataFrame
-new_test_case_df = pd.DataFrame([new_test_case])
+# Reload the trained model and feature importances
+model = joblib.load('model.pkl')
+importance_df = pd.read_csv('feature_importances.csv')
 
-# Use the trained model to predict the scores
-predicted_scores = model.predict(new_test_case_df)
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    new_test_case_df = pd.DataFrame([data])
+    new_test_case_preprocessed = model.named_steps['preprocessor'].transform(new_test_case_df)
+    predicted_scores = model.named_steps['regressor'].predict(new_test_case_preprocessed)
+    predicted_scores *= 8  # Assuming you want to scale the predictions
+    return jsonify({
+        'predicted_scores': predicted_scores.tolist(),
+        'feature_importances': importance_df.to_dict(orient='records')
+    })
 
-predicted_scores*=8
-
-# Display the predicted scores
-print(predicted_scores)
-
-
-# Plot feature importances
-plt.figure(figsize=(12, 8))
-plt.barh(importance_df['Feature'], importance_df['Importance'])
-plt.xlabel('Importance')
-plt.ylabel('Feature')
-plt.title('Feature Importances')
-plt.gca().invert_yaxis()
-
-
-# Display the sorted feature importances
-print(importance_df)
-
+if __name__ == '__main__':
+    app.run(debug=True)

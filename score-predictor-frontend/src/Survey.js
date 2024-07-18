@@ -48,6 +48,10 @@ export default function Survey() {
     }
   };
 
+  const areAllQuestionsAnswered = () => {
+    return questions.every(question => answers[question.name]);
+  };
+
    // Calculate percentage width for top-line
    const topLineWidth = ((currentQuestion + 1) / questions.length) * 100 + '%';
 
