@@ -34,9 +34,12 @@ export default function Survey() {
 
   const nextQuestion = () => {
     if (currentQuestion < questions.length - 1) {
+      alert("Test")
       setCurrentQuestion(currentQuestion + 1);
-    } else {
+    } else if (areAllQuestionsAnswered) {
       navigate('/Results')
+    } else {
+      alert("Please answer all of the questions before submitting.")
     }
   };
 
