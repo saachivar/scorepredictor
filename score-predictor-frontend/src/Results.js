@@ -9,7 +9,7 @@ export default function Results() {
   const { scores, importances } = location.state || {};
 
   // If scores or importances are not available, redirect back to the survey
-  if (!scores || !importances) {
+  if (!(scores && importances)) {
     navigate('/');
     return null;
   }
