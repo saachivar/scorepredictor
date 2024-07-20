@@ -8,10 +8,10 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 import joblib
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/predict": {"origins": "http://localhost:3000/Survey"}})
 
 # Load the dataset
 df = pd.read_csv('Expanded_data_with_more_features.csv')
@@ -84,7 +84,9 @@ def home():
     return "Welcome to the Score Predictor API!"
 
 @app.route('/predict', methods=['POST'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def predict():
+    print("received")
     data = request.json
     new_test_case_df = pd.DataFrame([data])
     new_test_case_preprocessed = model.named_steps['preprocessor'].transform(new_test_case_df)

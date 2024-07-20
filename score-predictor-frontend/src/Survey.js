@@ -13,16 +13,16 @@ export default function Survey() {
   const [answers, setAnswers] = useState({});
 
   const questions = [
-    { question: "1. What is your gender?", answers: ["male", "female"], name: "gender" },
-    { question: "2. What is your parents' education level?", answers: ["bachelor's degree", "some college", "master's degree", "associate's degree", "high school"], name: "parentsEducation" },
-    { question: "3. What is your lunch type?", answers: ["free/reduced", "standard"], name: "lunchType" },
-    { question: "4. Have you completed any test prep?", answers: ["yes", "no"], name: "testPrep" },
-    { question: "5. What is your parent's marital status?", answers: ["married", "divorced", "widowed"], name: "maritalStatus" },
-    { question: "6. Do you practice a sport?", answers: ["regularly", "sometimes", "never"], name: "sportPractice" },
-    { question: "7. Are you a first child?", answers: ["yes", "no"], name: "firstChild" },
-    { question: "8. How many siblings do you have?", answers: ["0", "1", "2", "3+"], name: "siblings" },
-    { question: "9. How do you get to school?", answers: ["school bus", "privately"], name: "schoolTransport" },
-    { question: "10. How many hours a week do you study?", answers: ["< 5", "5 - 10", "> 10"], name: "studyHours" },
+    { question: "1. What is your gender?", answers: ["Male", "female"], name: "Gender" },
+    { question: "2. What is your parents' education level?", answers: ["bachelor's degree", "some college", "master's degree", "associate's degree", "high school"], name: "ParentEduc" },
+    { question: "3. What is your lunch type?", answers: ["free/reduced", "standard"], name: "LunchType" },
+    { question: "4. Have you completed any test prep?", answers: ["yes", "no"], name: "TestPrep" },
+    { question: "5. What is your parent's marital status?", answers: ["married", "divorced", "widowed"], name: "ParentMaritalStatus" },
+    { question: "6. Do you practice a sport?", answers: ["regularly", "sometimes", "never"], name: "PracticeSport" },
+    { question: "7. Are you a first child?", answers: ["yes", "no"], name: "IsFirstChild" },
+    { question: "8. How many siblings do you have?", answers: ["0", "1", "2", "3+"], name: "NrSiblings" },
+    { question: "9. How do you get to school?", answers: ["school bus", "privately"], name: "TransportMeans" },
+    { question: "10. How many hours a week do you study?", answers: ["< 5", "5 - 10", "> 10"], name: "WklyStudyHours" },
   ];
 
   const handleAnswerChange = (name, answer) => {
@@ -58,6 +58,7 @@ export default function Survey() {
   const sendAnswersToBackend = async () => {
     try {
       const response = await fetch('http://127.0.0.1:5000/predict', {
+        mode: 'cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
