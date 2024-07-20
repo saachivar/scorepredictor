@@ -7,6 +7,7 @@ export default function Results() {
   const location = useLocation();
   // Extract the predicted scores and feature importances from the location state
   const { scores, importances } = location.state || {};
+  console.log(scores)
 
   // If scores or importances are not available, redirect back to the survey
   if (!(scores && importances)) {
@@ -14,14 +15,14 @@ export default function Results() {
     return null;
   }
 
+
+
   return (
     <div className='Results'>
       <h1>Results</h1>
-      <ul>
-        {scores.map((score, index) => (
-          <li key={index}>Subject {index + 1}: {score}</li>
-        ))}
-      </ul>
+      <div className="scores">
+        Score 1: {scores[0]} Score 2: {scores[1]}
+      </div>
       <h1>Feature Importances</h1>
       <table>
         <thead>

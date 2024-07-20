@@ -55,26 +55,34 @@ export default function Survey() {
     return questions.every(question => answers[question.name] !== undefined && answers[question.name] !== '');
   };
 
-  const sendAnswersToBackend = async () => {
-    try {
-      const response = await fetch('http://127.0.0.1:5000/predict', {
+  const sendAnswersToBackend = () => {
+      fetch('http://127.0.0.1:5000/predict', {
         mode: 'cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(answers),
-      });
-      const data = await response.json();
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Handle the response data (e.g., display recipes to the user)
+      console.log(data);
       // Handle the response data as needed
       console.log('Predicted Scores:', data.predicted_scores);
       console.log('Feature Importances:', data.feature_importances);
       navigate('/Results', { state: { scores: data.predicted_scores, importances: data.feature_importances } });
-    } catch (error) {
-      console.error('Error sending data to backend:', error);
-    }
-    navigate('/Results')
-  }
+      })
+      .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+      });
+
+  };
 
   // Calculate percentage width for top-line
   const topLineWidth = ((currentQuestion + 1) / questions.length) * 100 + '%';
@@ -105,4 +113,6 @@ export default function Survey() {
       </div>
     </div>
   );
+
+
 }
