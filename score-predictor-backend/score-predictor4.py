@@ -7,7 +7,6 @@ from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
-import joblib
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
