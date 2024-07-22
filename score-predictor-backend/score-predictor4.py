@@ -71,12 +71,9 @@ importance_df = pd.DataFrame({'Feature': all_columns, 'Importance': feature_impo
 # Sort the DataFrame by importance
 importance_df = importance_df.sort_values(by='Importance', ascending=False)
 
-# Save the trained model and feature importances
-joblib.dump(model, 'model.pkl')
 importance_df.to_csv('feature_importances.csv', index=False)
 
-# Reload the trained model and feature importances
-model = joblib.load('model.pkl')
+
 importance_df = pd.read_csv('feature_importances.csv')
 
 @app.route('/')

@@ -71,11 +71,7 @@ export default function Survey() {
         return response.json();
       })
       .then(data => {
-        // Handle the response data (e.g., display recipes to the user)
-      console.log(data);
       // Handle the response data as needed
-      console.log('Predicted Scores:', data.predicted_scores);
-      console.log('Feature Importances:', data.feature_importances);
       navigate('/Results', { state: { scores: data.predicted_scores, importances: data.feature_importances } });
       })
       .catch(error => {
