@@ -81,6 +81,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Acknowledgments
 
-- My interest in machine learning and statistics inspired me to create this webpage that uses those features.
+My interest in machine learning and statistics inspired me to create this webpage that uses those features.
 
 
