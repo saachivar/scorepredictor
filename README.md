@@ -1,6 +1,9 @@
 # Score Predictor
 
-
+This is the SAT Score Predictor! Using a survey of 10 questions, it gives an estimate of what your supposed SAT score would be. 
+All data used in this project to train the model is from https://www.kaggle.com/datasets/desalegngeb/students-exam-scores/,
+a database with fictional data purely meant for education. This project does not claim to accurately predict scores in the real world,
+and is instead to be used to demonstrate how data can use trends to make predictions. 
 
 ## Getting Started
 
@@ -23,8 +26,8 @@ A step by step series of examples that tell you how to get a development environ
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/yourproject.git
-    cd yourproject/frontend
+    git clone https://github.com/saachivar/scorepredictor.git
+    cd scorepredictor/score-predictor-frontend
     ```
 
 2. Install the dependencies:
@@ -44,7 +47,7 @@ A step by step series of examples that tell you how to get a development environ
 1. Navigate to the backend directory:
 
     ```bash
-    cd ../backend
+    cd ../score-predictor-backend
     ```
 
 2. Create a virtual environment and activate it:
@@ -63,21 +66,14 @@ A step by step series of examples that tell you how to get a development environ
 4. Run the Flask app:
 
     ```bash
-    flask run
+    python3 score-predictor4.py
     ```
 
 ### Usage
 
 1. Start the frontend and backend servers as described above.
-2. Open your web browser and go to the URL of your frontend (usually `http://localhost:3000`).
-3. Interact with the application as intended.
-
-### Deployment
-
-The frontend is hosted on Vercel. Follow these steps to deploy the backend locally:
-
-1. Ensure your backend server is running locally as described in the "Backend" section.
-2. Open the frontend URL (e.g., `https://yourproject.vercel.app`) and interact with the application.
+2. Open your web browser and go to the URL of the frontend (usually `http://localhost:3000`).
+3. Interact with the application by doing the survey and seeing your results!
 
 ### License
 
@@ -85,8 +81,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+My interest in machine learning and statistics inspired me to create this webpage that uses those features.
 
 
