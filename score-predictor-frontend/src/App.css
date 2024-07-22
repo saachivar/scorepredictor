@@ -8,7 +8,9 @@ h1 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-h2, .h2, ul {
+
+
+h2, .h2 {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto; 
   font-weight: 400;
@@ -38,7 +40,15 @@ ul {
   margin-bottom: 190px;
   width: 900px;
 }
-
+.Welcome {
+  animation: fadeIn1 .5s;
+}
+.Desc {
+  animation: fadeIn2 1s;
+}
+.Disclaimer {
+  animation: fadeIn3 1.5s;
+}
 .Results {
   margin-left: 70px;
   margin-top: 40px;
@@ -78,6 +88,16 @@ ul {
 .question {
   margin-left: 100px;
   margin-top: 40px;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto; 
+  font-weight: 400;
+  font-style: normal;
+  font-size: 55px;
+  text-decoration: none; 
+  color: white; 
+  margin-top: 15px;
+
+
 }
 
 .Results {
@@ -219,9 +239,14 @@ ul {
   color: white;
 }
 
+.resultTitle {
+  animation: fadeIn1 .5s;
+}
+
 .scores {
   width: 80vw; /* 70% of the viewport width */
-  padding-bottom: 50px;;
+  padding-bottom: 35px;
+  animation: fadeIn2 1s;
 }
 
 .scoreGrid {
@@ -250,12 +275,126 @@ ul {
   font-size: 50px;
 }
 
+.wholeDesc, .halfDesc {
+  font-size: 20px;
+}
+
 .halfDesc {
   margin-top: 10px;
 }
 
+.Why {
+  animation: fadeIn3 1.5s;
+}
 .explanation {
-  margin-top: -35px;
+  margin-top: -25px;
   font-family: "Raleway", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
+  animation: fadeIn3 1.5s;
+
+}
+
+.featuresList {
+  font-size: 10;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  animation: fadeIn4 2s;
+}
+
+dd {
+  display: list-item;
+  list-style-type: "-->";
+  padding-inline-start: 1ch;
+}
+
+.navLink {
+  float: right;
+  color: white;
+  margin-right: 50px;
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  animation: fadeIn5 2.5s;
+}
+
+.navLink:hover {
+  color: rgb(212, 221, 242);
+  font-size: 31px;
+  text-decoration: none;
+}
+
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn3 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn4 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn5 {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

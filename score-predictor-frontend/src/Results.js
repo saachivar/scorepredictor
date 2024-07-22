@@ -19,7 +19,8 @@ export default function Results() {
   const location = useLocation();
   // Extract the predicted scores and feature importances from the location state
   const { scores, importances } = location.state || {};
-  console.log(scores)
+  console.log(importances)
+ 
 
   // If scores or importances are not available, redirect back to the survey
   if (!(scores && importances)) {
@@ -28,7 +29,7 @@ export default function Results() {
   }
 
   const flatScores = scores.flat()
-  console.log(flatScores)
+
   flatScores[0] = Math.ceil(flatScores[0] / 10) * 10;
   flatScores[1] = Math.ceil(flatScores[1] / 10) * 10;
 
@@ -83,7 +84,9 @@ export default function Results() {
 
   return (
     <div className='Results'>
-      <h1>Results</h1>
+      <div className = 'resultTitle'>
+        <h1>Results</h1>
+      </div>
       <div className="scores">
         <div className="scoreGrid">
           <div className="score">
@@ -112,27 +115,20 @@ export default function Results() {
           </div>
         </div>  
       </div>
-      <h2>Why?</h2>
+      <div className="Why">
+        <h2>Why?</h2>
+      </div>
       <div className="explanation"> 
         These are the features that had the most impact towards your predicted score.
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Importance</th>
-          </tr>
-        </thead>
-        <tbody>
-          {readableFeatures.map((importance, index) => (
-            <tr key={index}>
-              <td>{importance.Feature}</td>
-              <td>{importance.Importance}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <Link className='nav-link' to="/">Begin the survey</Link>
+      <div className="featuresList">
+        {readableFeatures.map((importance, index) => (
+          <dl key={index}>
+            <dd>{importance.Feature}</dd>
+          </dl>
+        ))}
+      </div>
+      <Link className='navLink' to="/">Go back to the beggining --{'>'}</Link>
     </div>
   )
 };

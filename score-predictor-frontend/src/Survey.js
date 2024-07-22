@@ -13,14 +13,14 @@ export default function Survey() {
   const [answers, setAnswers] = useState({});
 
   const questions = [
-    { question: "1. What is your gender?", answers: ["Male", "female"], name: "Gender" },
+    { question: "1. What is your gender?", answers: ["Male", "Female"], name: "Gender" },
     { question: "2. What is your parents' education level?", answers: ["bachelor's degree", "some college", "master's degree", "associate's degree", "high school"], name: "ParentEduc" },
     { question: "3. What is your lunch type?", answers: ["free/reduced", "standard"], name: "LunchType" },
     { question: "4. Have you completed any test prep?", answers: ["yes", "no"], name: "TestPrep" },
     { question: "5. What is your parent's marital status?", answers: ["married", "divorced", "widowed"], name: "ParentMaritalStatus" },
     { question: "6. Do you practice a sport?", answers: ["regularly", "sometimes", "never"], name: "PracticeSport" },
     { question: "7. Are you a first child?", answers: ["yes", "no"], name: "IsFirstChild" },
-    { question: "8. How many siblings do you have?", answers: ["0", "1", "2", "3+"], name: "NrSiblings" },
+    { question: "8. How many siblings do you have?", answers: ["0", "1", "2", "3"], name: "NrSiblings" },
     { question: "9. How do you get to school?", answers: ["school bus", "privately"], name: "TransportMeans" },
     { question: "10. How many hours a week do you study?", answers: ["< 5", "5 - 10", "> 10"], name: "WklyStudyHours" },
   ];
