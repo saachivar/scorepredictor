@@ -220,7 +220,8 @@ ul {
 }
 
 .scores {
-  width: 70vw; /* 70% of the viewport width */
+  width: 80vw; /* 70% of the viewport width */
+  padding-bottom: 50px;;
 }
 
 .scoreGrid {
@@ -232,21 +233,29 @@ ul {
   width: 30%; /* Each item takes up 30% of the container width */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   padding: 10px; /* Optional: Add some padding around each item */
-
+  margin-top: 20px;
   margin-bottom: 10px; /* Optional: Add some space between rows */
-    /* Added for alignment */
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Align content to the bottom */
-    
   min-height: 150px; /* Set a minimum height for all items to align bottoms */
   font-family: "Raleway", sans-serif;
 }
 
 .wholeNum {
-  font-size: 70px;
+  font-size: 90px;
 }
 
 .halfNum {
   font-size: 50px;
+}
+
+.halfDesc {
+  margin-top: 10px;
+}
+
+.explanation {
+  margin-top: -35px;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
 }

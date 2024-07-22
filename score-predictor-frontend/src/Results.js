@@ -7,8 +7,8 @@ function Number ({ n }) {
   const { number } = useSpring({
     from: { number: 0 },
     number: n,
-    delay: 200,
-    config: { mass: 1, tension: 20, friction: 20, duration: 2000 },
+    delay: 500,
+    config: {  mass: 1, tension: 170, friction: 50 },
   });
   return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
 }
@@ -91,7 +91,7 @@ export default function Results() {
               <Number n={flatScores[0]+flatScores[1]} />   
             </div>
             <div className = "wholeDesc">
-              Total Score
+              Predicted Total Score
             </div>
           </div>
           <div className="score">
@@ -99,7 +99,7 @@ export default function Results() {
               <Number n={flatScores[0]} /> 
             </div>
             <div className = "halfDesc">
-              Math Score
+              Predicted Math Score
             </div>
           </div>
           <div className="score">
@@ -107,12 +107,15 @@ export default function Results() {
               <Number n={flatScores[1]} /> 
             </div>
             <div className = "halfDesc">
-              Reading Score
+              Predicted Reading Score
             </div>
           </div>
         </div>  
       </div>
-      <h1>Feature Importances</h1>
+      <h2>Why?</h2>
+      <div className="explanation"> 
+        These are the features that had the most impact towards your predicted score.
+      </div>
       <table>
         <thead>
           <tr>
