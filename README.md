@@ -4,6 +4,7 @@ This is the SAT Score Predictor! Using a survey of 10 questions, it gives an est
 All data used in this project to train the model is from https://www.kaggle.com/datasets/desalegngeb/students-exam-scores/,
 a database with fictional data purely meant for education. This project does not claim to accurately predict scores in the real world,
 and is instead to be used to demonstrate how data can use trends to make predictions. 
+![](https://github.com/saachivar/scorepredictor/blob/main/scorepredictorvid.gif)
 
 ## Getting Started
 
