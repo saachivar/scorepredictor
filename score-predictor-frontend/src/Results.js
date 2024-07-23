@@ -128,7 +128,7 @@ export default function Results() {
           </dl>
         ))}
       </div>
-      <Link className='navLink' to="/">Go back to the beggining --{'>'}</Link>
+      <Link className='navLink' to="/">Go back to the beginning --{'>'}</Link>
     </div>
   )
 };
